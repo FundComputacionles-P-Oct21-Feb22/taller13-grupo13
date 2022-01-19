@@ -1,0 +1,22 @@
+1 Inicio
+2 funcion principal()
+3 k, i[0-n] 
+  
+  << "Ingrese un número:"
+  >> k  // 1920
+  k1 = k
+  obtenerResiduo(k1)
+  resultado = obtenerResultado(k)
+  << resultado 
+ fin funcion principal
+
+ funcion obtenerResiduo(k1, i) //1920
+  residuo, i[0-n]
+  Para (int j = 0; k1 > 0; j++) haga //1920>0 v //
+
+    residuo = k1 mod 10 // 1920%10= 0 // 2 // 9 // 1 //pedir funcion
+    << residuo + "* 10 elevado a la pontencia " + j
+    k1= k1/10 	//192 //19 //1 //0 //pedir funcion
+  Fin_Para
+ fin funcion obtenerResiudo
+
