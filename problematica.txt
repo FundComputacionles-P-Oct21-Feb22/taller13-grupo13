@@ -1,22 +1,31 @@
 1 Inicio
-2 funcion principal()
-3 k, i[0-n] 
-  
-  << "Ingrese un número:"
-  >> k  // 1920
-  k1 = k
-  obtenerResiduo(k1)
-  resultado = obtenerResultado(k)
-  << resultado 
- fin funcion principal
+2 funcion principal()	
+3   k, i[0-n] 
+4   k1, i[0-n]
+5   residuo, i[0-n]
+6   acumulador, x(150)[{a-z}, {A-Z}, {BS}, {0-9}]
+7   << "Ingrese un número:"
+8   >> k  
+9   k1 = k
+10   Mientras(k1>0)Haga
+11	residuo <-- obtenerResiduo(k1;10)
+12   	acumuladorString = obtenerResultado(k1)
+13	escribir acumuladorString
+14    Fin_Mientras
+15 fin funcion principal
 
- funcion obtenerResiduo(k1, i) //1920
-  residuo, i[0-n]
-  Para (int j = 0; k1 > 0; j++) haga //1920>0 v //
+16 funcion obtenerResultado(k1, i) : x 
+17 	residuo, i[0-n]
+18 	mensajePreeliminar, x(150)[{a-z}, {A-Z}, {BS}, {0-9}] 
+19 	residuo <-- obtenerResiduo(k1) 
+20 	mensajePreeliminar <-- residuo + "* 10 elevado a la pontencia " + j
+21 	k1= k1/10
+22 	retornar mensajePreeliminar	
+23 fin funcion obtenerResultado
 
-    residuo = k1 mod 10 // 1920%10= 0 // 2 // 9 // 1 //pedir funcion
-    << residuo + "* 10 elevado a la pontencia " + j
-    k1= k1/10 	//192 //19 //1 //0 //pedir funcion
-  Fin_Para
- fin funcion obtenerResiudo
-
+24 funcion obtenerResiduo(k1, i) : i
+25 	residuo, i[0-n]
+26 	residuo <-- k1 MOD 10 
+27 	return residuo
+28 fin funcion obtenerResiduo
+29 Fin
