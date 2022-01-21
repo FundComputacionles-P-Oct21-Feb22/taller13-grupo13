@@ -4,28 +4,29 @@
 4   k1, i[0-n]
 5   residuo, i[0-n]
 6   acumulador, x(150)[{a-z}, {A-Z}, {BS}, {0-9}]
-7   << "Ingrese un número:"
-8   >> k  
-9   k1 = k
-10   Mientras(k1>0)Haga
-11	residuo <-- obtenerResiduo(k1;10)
-12   	acumuladorString = obtenerResultado(k1)
-13	escribir acumuladorString
-14    Fin_Mientras
-15 fin funcion principal
+7   j, i[0-n] <-- 0
+8   << "Ingrese un número:"
+9   >> k  
+10   k1 = k
+11   Mientras(k1>0)Haga
+12   	acumuladorString = obtenerResultado(k1; j)
+12	<< acumuladorString
+14	j = j + 1
+15	k1 = k1/10
+16    Fin_Mientras
+17 fin funcion principal
 
-16 funcion obtenerResultado(k1, i) : x 
-17 	residuo, i[0-n]
-18 	mensajePreeliminar, x(150)[{a-z}, {A-Z}, {BS}, {0-9}] 
-19 	residuo <-- obtenerResiduo(k1) 
-20 	mensajePreeliminar <-- residuo + "* 10 elevado a la pontencia " + j
-21 	k1= k1/10
-22 	retornar mensajePreeliminar	
-23 fin funcion obtenerResultado
+18 funcion obtenerResultado(k1, i; j, i) : x
+19 	residuo, i[0-n]
+20 	mensajePreeliminar, x(150)[{a-z}, {A-Z}, {BS}, {0-9}] 
+21	residuo <-- obtenerResiduo(k1) 
+22 	mensajePreeliminar <-- residuo + "* 10 elevado a la pontencia " + j
+23 	retornar mensajePreeliminar	
+24 fin funcion obtenerResultado
 
-24 funcion obtenerResiduo(k1, i) : i
-25 	residuo, i[0-n]
-26 	residuo <-- k1 MOD 10 
-27 	return residuo
-28 fin funcion obtenerResiduo
-29 Fin
+25 funcion obtenerResiduo(k1, i) : i
+26 	residuo, i[0-n]
+27 	residuo <-- k1 MOD 10 
+28 	return residuo
+29 fin funcion obtenerResiduo
+30 Fin
